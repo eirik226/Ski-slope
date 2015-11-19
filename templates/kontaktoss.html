@@ -1,0 +1,73 @@
+{% extends 'base.html' %}
+{% block Hbody %}
+
+<body>
+<div class="container">
+	<h2>Kontakt oss<small> Hjelpen du trenger</h2></br>
+<div class="row">
+	<div class="col-sm-9">
+		<blockquote class="blockquote-reverse">
+			Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. 
+			Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. 
+			Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. 
+			Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, 
+			imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium.
+			<footer>Han som står på brett sier<cite title="Source Title"> Lorem ipsum brettum</cite></footer>
+		</blockquote>
+    <div class="row">
+      <div class="col-xs-8 col-sm-6">
+	  
+        <address>
+			<strong>Alpinbakken</strong><br>
+			7070 Oppdal, Levangergata,<br>
+			Norge<br>
+			<abbr title="Phone">Tlf:</abbr> 90807060
+		</address>
+		<address>
+			<strong>Alpinbakken</strong><br>
+			<a href="mailto:#">Alpin.bakken@AP.no</a>
+		</address>
+		
+      </div>
+	  <div class="col-xs-4 col-sm-6">
+	<div class="media">
+			<div class="media-left media-middle">
+				<a href="#">
+					<img class="media-object" src="{{ url_for('static', filename='images/support.png') }}" alt="Support"/>
+				</a>
+			</div>
+		<div class="media-body">
+			<h4 class="media-heading">Snakk med en medarbeider</h4>
+			<p><strong>Ring oss på skype:</strong> Alpin.bakken.skype</p>
+			<p><strong>Ring oss på tlf  :</strong> 90807060</p>
+		</div>
+	</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+	<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+
+
+		<h4>Alpinbakken holder til her:</h4>
+			{% with %}
+			{% set location=(62.611389,9.649672) %}
+			{% set style="width:500px;height:500px;"%}
+
+			{{
+				googlemap(
+			"simple-map",
+			location.0, location.1,
+			markers=[location,],
+			style=style
+			)
+			}}
+
+			{% endwith %}
+</div>
+</div>
+</div>
+</body>
+{% endblock %}

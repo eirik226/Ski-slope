@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block Hbody %}
+<body>
+
+<div class="container">
+    <h3>Logg inn for å få tilgang til flere funksjoner <small>Bruk skjemaet under:</small></h3>
+    <br>
+        <form action="" class="form-inline" method="post">
+            <input type="text" class="form-control" placeholder="Brukernavn" name="username" value="">
+            <input type="password" class="form-control" placeholder="Passord" name="password" value="">
+            <input class="btn btn-default" type="submit" value="Login">
+        </form>
+      
+    {% if error %}
+        <p class="error"><strong>Error:</strong> {{ error }}</p>
+    {% endif %}
+    
+    <br><p>Aldri registrert deg? <a href='/registrer'>Trykk her for å opprette en konto</a>.</p>
+     
+    
+</div>
+</body>
+{% endblock %}
+
+

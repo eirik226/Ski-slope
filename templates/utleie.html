@@ -1,0 +1,134 @@
+{% extends 'base.html' %}
+{% block Hbody %}
+
+<body>
+<div class="container">
+	<h2>Utleie<small> Velg mellom fem ulike pakker</h2></br>
+		<!-- Large modal -->
+			<button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-lg">Informasjon</button>
+				<div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+					<div class="modal-dialog modal-lg">
+						<div class="modal-content">
+						<div class="modal-header">
+							<h3 class="modal-title">Informasjon om pakker</h3>
+						</div>
+							<div class="modal-body">
+							<h5>Alle pakker vil tilbyr inkluderer alt du trenger, prisen er den samme.
+							Det som varierer fra pakke til pakke er ferdighetene som vi mener trengs.</h5>
+							<dl>
+								<dt><h4>Nybegynner :</h4></dt>
+									<dd>Tilgjengelig for både ski og snowboard, denne pakken passer
+									til deg som er ny på ski eller snowboard.</br></br>
+									<u>Du står for første gang eller har prøvd noen få ganger.</u></br></br>
+									Dette er et godt og sikkert valg for deg som er ny. Pakken skal være enkel å bruke og lære.
+									</dd>
+									</br>
+								<dt><h4>Midt på treet :</h4></dt>
+									<dd>Tilgjengelig for ski, denne pakken passer til deg som har prøvd ski før.</br></br>
+									<u>Du har prøvd ski før og har litt erfaring.</u></br></br>
+									Dette er er godt og sikkert valg for deg som har litt erfaring. Pakken krever litt mer enn nybegynner
+									men kan også brukes av nybegynnere om dette ønskes. Vi anbefaler dog nybegynner pakken om du er helt ny.
+									</dd>
+									</br>
+								<dt><h4>Erfaren : </h4></dt>
+									<dd>Tilgjengelig for ski og snowboard, denne pakken passer til deg som er erfaren.</br></br>
+									<u>Du har stått mye på ski eller snowboard og har mye erfaring</u></br></br>
+									Dette er er godt valg for deg som har stått mye på ski eller snowboard og har mye erfaring innen feltet.
+									Denne pakken krever mer av deg enn resten og vi anbefaler på det sterkeste disse skiene bare til personer med erfaring.
+									</dd>
+									</br>
+								<dt><h4>Informasjon om pris : </h4></dt>
+									<dd>Priser varierer fra time, dag og uke -betaling:</br></br>
+									<strong>Timeleie: 16 kroner per time</strong></br>
+									<strong>Dagsleie: 288 kroner per dag</strong></br>
+									<strong>Ukeleie: 1700 kroner per uke</strong></br>
+									<dd>
+							</dl>
+							
+							</div>
+						</div>
+					</div>
+				</div>
+</br>
+</br>
+<form action="{{ url_for('utleie') }}" class="form" method="POST">
+	<div class="row">
+		<div class="col-md-6">
+			<h4>Skipakker</h4>
+				<div class="radio">
+					<label>
+					<input type="radio" name="optionsRadios" id="skipakk1" value="Ski Nybegynner">
+					Nybegynner
+					</label>
+				</div>
+				<div class="radio">
+					<label>
+					<input type="radio" name="optionsRadios" id="skipakk2" value="Ski Viderekommen">
+					Viderekommen
+					</label>
+				</div>
+				<div class="radio">
+					<label>
+					<input type="radio" name="optionsRadios" id="skipakk3" value="Ski Erfaren">
+					Erfaren
+					</label>
+				</div>
+		</div>
+		<div class="col-md-6">
+			<h4>Snowboardpakker</h4>
+				<div class="radio">
+					<label>
+					<input type="radio" name="optionsRadios" id="sbpakk1" value="Snowboard Nybegynner">
+					Nybegynner
+					</label>
+				</div>
+				<div class="radio">
+					<label>
+					<input type="radio" name="optionsRadios" id="sbpakk2" value="Snowboard Erfaren">
+					Erfaren
+					</label>
+				</div>
+		</div>
+	</div>
+	<h4>Tileggsinformasjon:</h4>
+		<div class="checkbox">
+			<label>
+			<input type="checkbox" name="tileggbox" id="underseksten" value="underseksten">
+					Er du under 16 år?
+			</label>
+		</div>
+		<div class="row">
+		<div class="col-xs-4">
+		<h4>Vennligst velg type leie:</h4>
+		<select class="form-control" name="leietid">
+		  <option value="Timeleie">Timeleie - 16 kr per time</option>
+		  <option value="Dagsleie">Dagsleie - 288 kr per dag</option>
+		  <option value="Ukeleie">Ukeleie - 1700 kr per uke</option>
+		</select>
+		</div>
+		</div>
+		</br>
+
+				<div class="row">
+		<div class="col-xs-4">
+		<h4>Vennligst velg varihet av leie:</h4>
+		<select class="form-control" name="leieantall">
+		  <option value="1">Lei for en time/dag/uke</option>
+		  <option value="2">Lei for to timer/dager/uker</option>
+		  <option value="3">Lei for tre timer/dager/uker</option>
+		  <option value="4">Lei for fire timer/dager/uker</option>
+		  <option value="5">Lei for fem timer/dager/uker</option>
+		  <option value="6">Lei for seks timer/dager/uker</option>
+		</select>
+		</div>
+		</div>
+		</br>
+		</br>
+		</br>
+		<center><input class="btn btn-success btn-lg" type="submit" value="Kjøp"></center>
+	</form>
+</div>
+
+</body>
+{% endblock %}
+

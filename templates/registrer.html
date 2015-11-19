@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block Hbody %}
+</body>
+
+	<div class="container">
+	<h3>Takk for at du valgte å registrere deg <small>Bruk skjemaet under:</small></h3>
+
+	{% from "_formhjelper.html" import render_field %}
+		<form method=post action="/registrer">
+			<dl>
+				{{ render_field(form.username) }}
+				{{ render_field(form.email) }}
+				{{ render_field(form.password) }}
+				{{ render_field(form.confirm) }}
+			 </dl>
+				<p><input type=submit value=Register>
+		</form>
+	
+	{% if error %}
+		<p class="error"><strong>Error:</strong> {{ error }}</p>
+	{% endif %}
+	</div>
+</body>
+{% endblock %}

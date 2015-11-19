@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% block Hbody %}
+
+<body>
+	<div class="container">
+		<h2>Takk for ditt kjøp<small> her er en oppsummering:</h2></br>
+		
+		
+		 {% for utleie in utleies %}
+			<li><h3>Du har valgt pakken for: <small><u>{{ utleie.pakke }}</u></small></h3></li>
+			<li><h3>Du har valgt type leie:<small> <u>{{utleie.leietid}}</u></small></h3></li>
+			<li><h3>Du har valgt å leie for:<small> <u>{{utleie.leieantall}} timer/dager/uker</u></h3></li>
+		{% endfor %}
+ 
+		<p>Totalpris vil komme på: tall</p>
+		
+		
+		
+		
+	<script language="JavaScript">
+		<!--
+		function RandomNumber(upper_limit) 
+		{ 
+		return Math.round(upper_limit * Math.random()); 
+		}
+		//--&gt
+	</script>
+
+	<script language="JavaScript">
+		<!--
+		var upper_limit = 9999;
+		document.write('<h3><center>Ditt hente nummer er: ' + RandomNumber(upper_limit) + '</h3></center>');
+		//-->
+	</script>	
+	</div>
+</body>
+
+
+ 
+{% endblock %}
